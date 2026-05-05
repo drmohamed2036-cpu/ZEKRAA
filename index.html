@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -13,7 +12,6 @@ body {
     background: #f3f3f3;
 }
 
-/* sidebar */
 .sidebar {
     width: 200px;
     background: black;
@@ -32,13 +30,12 @@ body {
     margin: 10px;
     padding: 10px;
     border: none;
-    background: green;
+    background: #ff9800;
     color: white;
     border-radius: 8px;
     cursor: pointer;
 }
 
-/* main */
 .main {
     margin-left: 200px;
     width: 100%;
@@ -52,32 +49,24 @@ h1 {
     text-align: center;
 }
 
-/* cart */
-.cart-box {
-    position: fixed;
-    top: 10px;
-    right: 20px;
-    background: orange;
-    padding: 10px 15px;
+/* السلة */
+#cart {
+    background: white;
+    padding: 15px;
+    margin: 10px;
     border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
 }
-
-/* products */
 .container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 30px;
-    justify-content: center;
 }
-
 .product {
     background: white;
     padding: 15px;
     border-radius: 15px;
-    width: 250px;
+    width: 250px; /* مهم جدا */
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -102,28 +91,29 @@ h1 {
     text-decoration: none;
     border-radius: 8px;
 }
-
-.add-cart {
-    background: orange;
-    color: black;
-    padding: 8px;
-    margin-top: 5px;
+.btn-order {
+    display: block;
+    background: #28a745; /* أخضر حلو وواضح */
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    text-decoration: none;
     border-radius: 8px;
-    cursor: pointer;
-    border: none;
+    text-align: center;
+    font-weight: bold;
 }
 
-/* cart list */
-.cart-list {
-    position: fixed;
-    right: 20px;
-    top: 60px;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    width: 250px;
-    display: none;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+.btn-order:hover {
+    background: #218838;
+}
+.add-cart {
+    background: orange;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
 }
 </style>
 </head>
@@ -131,64 +121,83 @@ h1 {
 <body>
 
 <div class="sidebar">
-    <h2>Zekraa</h2>
-    <button onclick="showCategory('all')">🏠 الكل</button>
-    <button onclick="showCategory('flowers')">🌸 بوكيهات</button>
-    <button onclick="showCategory('perfume')">🧴 عطور</button>
-    <button onclick="showCategory('distributions')">🎁 توزيعات</button>
+<h2>Zekraa</h2>
+<button onclick="showCategory('all')">🏠 الكل</button>
+<button onclick="showCategory('flowers')">🌸 بوكيهات</button>
+<button onclick="showCategory('perfume')">🧴 عطور</button>
+<button onclick="showCategory('distributions')">🎁 توزيعات</button>
+<button onclick="showCategory('tray')">🪔 صواني شبكة</button>
 </div>
 
 <div class="main">
 
 <h1>مرحبا بك في Zekraa</h1>
 
-<!-- سلة -->
-<div class="cart-box" onclick="toggleCart()">
-🛒 السلة (<span id="count">0</span>)
-</div>
-
-<div class="cart-list" id="cartList">
-<h3>السلة</h3>
-<ul id="cartItems"></ul>
+<!-- السلة -->
+<div id="cart">
+<h2>🛒 سلة المشتريات</h2>
+<ul id="cart-items"></ul>
+<p><strong>الإجمالي: <span id="total">0</span> جنيه</strong></p>
 </div>
 
 <div class="container">
 
-<!-- 🌸 بوكيهات -->
+<!-- 🌸 بوكيهات الورد -->
+
 <div class="product flowers">
 <img src="https://i.ytimg.com/vi/F2vRKNdP_O0/hqdefault.jpg">
 <h3>وردة واحدة</h3>
-<p>وردة بسيطة وجميلة 🌹</p>
 <p class="price">50 جنيه</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب وردة واحدة">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('وردة واحدة')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('وردة واحدة',50)">أضف للسلة</button>
 </div>
 
 <div class="product flowers">
-<img src="https://cdn.salla.sa/rAzqoo/2fc8d501-568f-4698-b378-53097ea12f61-1000x1000-uxIXe3pYv3SS1jqXhj8T2JqhY74mcjrfGeu1dzlh.jpg">
+<img src="https://i.ibb.co/6Jw2pzYb/Whats-App-Image-2026-05-04-at-9-43-23-PM.jpg">
 <h3>بوكيه ورد كبير</h3>
-<p>بوكيه فاخر 💐</p>
 <p class="price">200 جنيه</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب بوكيه ورد كبير">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('بوكيه ورد كبير')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('بوكيه ورد كبير',200)">أضف للسلة</button>
 </div>
 
 <div class="product flowers">
 <img src="https://i.ibb.co/9kG1KpFN/graduation-jpg.jpg">
 <h3>بوكيه تخرج</h3>
-<p>تصميم شيك 🎓</p>
 <p class="price">150 جنيه</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب بوكيه تخرج 150 جنيه">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('بوكيه تخرج 150')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('بوكيه تخرج',150)">أضف للسلة</button>
 </div>
 
 <div class="product flowers">
 <img src="https://i.ibb.co/KjNk1dRz/Whats-App-Image-2026-05-04-at-9-44-56-PM.jpg">
-<h3>بوكيه ورد فلوس 💸💐</h3>
-<p>بوكيه مميز حسب الطلب 💰</p>
+<h3>بوكيه ورد فلوس 💸</h3>
 <p class="price">حسب الطلب</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب بوكيه فلوس">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('بوكيه فلوس')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('بوكيه ورد فلوس',0)">أضف للسلة</button>
+</div>
+
+<div class="product flowers">
+<img src="https://i.ibb.co/DHqhfVF6/Whats-App-Image-2026-05-04-at-10-35-55-PM-1.jpg">
+<h3>بوكيه تخرج فاخر</h3>
+<p class="price">300 جنيه</p>
+<button class="add-cart" onclick="addToCart('بوكيه تخرج فاخر',300)">أضف للسلة</button>
+</div>
+
+<div class="product flowers">
+<img src="https://i.ibb.co/hJwNNp8w/Whats-App-Image-2026-05-04-at-9-44-54-PM-1.jpg">
+<h3>بوكيه فلوس مميز</h3>
+<p class="price">حسب الطلب</p>
+<button class="add-cart" onclick="addToCart('بوكيه فلوس مميز',0)">أضف للسلة</button>
+</div>
+
+<div class="product flowers">
+<img src="https://i.ibb.co/6RcZ4H6P/Whats-App-Image-2026-05-04-at-10-35-55-PM.jpg">
+<h3>بوكيه تخرج خاص</h3>
+<p class="price">حسب الطلب</p>
+<button class="add-cart" onclick="addToCart('بوكيه تخرج خاص',0)">أضف للسلة</button>
+</div>
+
+<div class="product flowers">
+<img src="https://i.ibb.co/9mvtK1j3/Whats-App-Image-2026-05-04-at-10-35-54-PM.jpg">
+<h3>بوكيه تخرج اقتصادي</h3>
+<p class="price">100 جنيه</p>
+<button class="add-cart" onclick="addToCart('بوكيه تخرج اقتصادي',100)">أضف للسلة</button>
 </div>
 
 <!-- 🧴 عطور -->
@@ -197,138 +206,169 @@ h1 {
 <h3>برفان سوفاج</h3>
 <p>عطر رجالي فخم</p>
 <p class="price">250 جنيه</p>
-<a class="btn" href="https://wa.me/201027056070?text=عايز اطلب برفان سوفاج">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('سوفاج')">أضف للسلة</button>
+
+<button class="add-cart" onclick="addToCart('سوفاج',250)">أضف للسلة</button>
 </div>
 
 <div class="product perfume">
 <img src="https://www.faces.eg/dw/image/v2/BJSM_PRD/on/demandware.static/-/Sites-faces-master-catalog/default/dw160fd05a/images/PM_CAROLINA_HERRERA_Bad_Boy_EDP_2.jpg">
 <h3>Bad Boy</h3>
-<p>قوي وجذاب 🔥</p>
+<p>عطر قوي وجذاب 🔥</p>
 <p class="price">300 جنيه</p>
-<a class="btn" href="https://wa.me/201027056070?text=عايز اطلب Bad Boy">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('Bad Boy')">أضف للسلة</button>
+
+<button class="add-cart" onclick="addToCart('Bad Boy',300)">أضف للسلة</button>
 </div>
 
 <div class="product perfume">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9kCJhtnCKjoiR0BjuAQm7Gk4H0MV4LtrEBg&s">
 <h3>Crazy Love</h3>
-<p>عطر حريمي 🌸</p>
+<p>عطر حريمي ناعم 🌸</p>
 <p class="price">300 جنيه</p>
-<a class="btn" href="https://wa.me/201027056070?text=عايز اطلب Crazy Love">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('Crazy Love')">أضف للسلة</button>
+
+<button class="add-cart" onclick="addToCart('Crazy Love',300)">أضف للسلة</button>
 </div>
 
+<!-- 🎁 توزيعات -->
 <div class="product distributions">
 <img src="https://i.ibb.co/Mx5Vc4rk/Whats-App-Image-2026-05-04-at-9-44-32-PM.jpg">
 <h3>توزيعات هدايا فاخرة</h3>
-<p>هدية أنيقة 🎁</p>
 <p class="price">450 جنيه</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب توزيعات فاخرة">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('توزيعات فاخرة 450')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('توزيعات فاخرة',450)">أضف للسلة</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/dwVpDx3r/Whats-App-Image-2026-05-04-at-9-44-49-PM.jpg">
-<h3>توزيعات مناسبات أنيقة</h3>
-<p>شيك وجذاب ✨</p>
+<h3>توزيعات أنيقة</h3>
 <p class="price">400 جنيه</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب توزيعات أنيقة">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('توزيعات أنيقة 400')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('توزيعات أنيقة',400)">أضف للسلة</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/ZRyvLjcH/Whats-App-Image-2026-05-04-at-9-44-50-PM-1.jpg">
-<h3>توزيعات مناسبات راقية</h3>
-<p>لمسة فخامة 🎀</p>
+<h3>توزيعات راقية</h3>
 <p class="price">400 جنيه</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب توزيعات راقية">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('توزيعات راقية 400')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('توزيعات راقية',400)">أضف للسلة</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/dwQcdzVP/Whats-App-Image-2026-05-04-at-9-44-37-PM.jpg">
-<h3>توزيعات أنيقة مميزة</h3>
-<p>تصميم جذاب 🎀</p>
+<h3>توزيعات مميزة</h3>
 <p class="price">300 جنيه</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب توزيعات مميزة">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('توزيعات مميزة 300')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('توزيعات مميزة',300)">أضف للسلة</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/GvDsh5kk/Whats-App-Image-2026-05-04-at-9-44-44-PM.jpg">
-<h3>توزيعات هدايا أنيقة</h3>
-<p>هدية راقية 🎁</p>
+<h3>توزيعات أنيقة</h3>
 <p class="price">350 جنيه</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب توزيعات أنيقة">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('توزيعات أنيقة 350')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('توزيعات 350',350)">أضف للسلة</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/qM7Wwd4z/Whats-App-Image-2026-05-04-at-9-44-45-PM-1.jpg">
-<h3>توزيعات هدايا بسيطة</h3>
-<p>بساطة وجمال ✨</p>
+<h3>توزيعات بسيطة</h3>
 <p class="price">250 جنيه</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب توزيعات بسيطة">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('توزيعات بسيطة 250')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('توزيعات بسيطة',250)">أضف للسلة</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/yFYGPFYf/Whats-App-Image-2026-05-04-at-9-44-46-PM-1.jpg">
-<h3>توزيعات هدايا مميزة</h3>
-<p>تصميم جميل 🎀</p>
+<h3>توزيعات مميزة</h3>
 <p class="price">250 جنيه</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب توزيعات مميزة">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('توزيعات مميزة 250')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('توزيعات مميزة2',250)">أضف للسلة</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/rGSvX67K/Whats-App-Image-2026-05-04-at-9-44-46-PM.jpg">
-<h3>توزيعات هدايا فخمة</h3>
-<p>فخامة وأناقة 👑</p>
+<h3>توزيعات فخمة</h3>
 <p class="price">450 جنيه</p>
-<a class="btn" href="https://wa.me/201080722682?text=عايز اطلب توزيعات فخمة">اطلب الآن</a>
-<button class="add-cart" onclick="addToCart('توزيعات فخمة 450')">أضف للسلة</button>
+<button class="add-cart" onclick="addToCart('توزيعات فخمة',450)">أضف للسلة</button>
 </div>
 
-<div class="footer">
-<p>جودة عالية 🌟 | أسعار مناسبة 💰 | توصيل سريع 🚚</p>
+<!-- 🪔 صواني شبكة -->
+
+<div class="product tray">
+<img src="https://i.ibb.co/LhPvR1Pp/Whats-App-Image-2026-05-04-at-10-36-29-PM-1.jpg">
+<h3>صينية شبكة فخمة</h3>
+<p>تصميم راقي ومميز 👑</p>
+<p class="price">400 جنيه</p>
+<button class="add-cart" onclick="addToCart('صينية شبكة فخمة',400)">أضف للسلة</button>
+</div>
+
+<div class="product tray">
+<img src="https://i.ibb.co/CpYNsHc9/Whats-App-Image-2026-05-04-at-10-36-29-PM-2.jpg">
+<h3>صينية شبكة راقية</h3>
+<p>لمسة أناقة وجمال ✨</p>
+<p class="price">450 جنيه</p>
+<button class="add-cart" onclick="addToCart('صينية شبكة راقية',450)">أضف للسلة</button>
+</div>
+
+<div class="product tray">
+<img src="https://i.ibb.co/Gfxc6CZ1/Whats-App-Image-2026-05-04-at-10-36-29-PM.jpg">
+<h3>صينية شبكة مميزة</h3>
+<p>تصميم جذاب 👌</p>
+<p class="price">300 جنيه</p>
+<button class="add-cart" onclick="addToCart('صينية شبكة مميزة',300)">أضف للسلة</button>
+</div>
+
+<div class="product tray">
+<img src="https://i.ibb.co/nMKLbrsd/Whats-App-Image-2026-05-04-at-10-36-25-PM.jpg">
+<h3>صينية شبكة بسيطة</h3>
+<p>شكل ناعم وجميل 🤍</p>
+<p class="price">200 جنيه</p>
+<button class="add-cart" onclick="addToCart('صينية شبكة بسيطة',200)">أضف للسلة</button>
+</div>
+
+<div class="product tray">
+<img src="https://i.ibb.co/FfbY3hJ/Whats-App-Image-2026-05-04-at-10-36-24-PM.jpg">
+<h3>صينية شبكة أنيقة</h3>
+<p>فخامة في التفاصيل 💎</p>
+<p class="price">350 جنيه</p>
+<button class="add-cart" onclick="addToCart('صينية شبكة أنيقة',350)">أضف للسلة</button>
 </div>
 
 </div>
 
 <script>
-// فلترة
 function showCategory(category) {
-    let products = document.querySelectorAll('.product');
-
-    products.forEach(function(p) {
-        if (category === 'all') {
-            p.style.display = 'block';
-        } else if (p.classList.contains(category)) {
-            p.style.display = 'block';
-        } else {
-            p.style.display = 'none';
-        }
+    document.querySelectorAll('.product').forEach(p=>{
+        p.style.display = (category==='all'||p.classList.contains(category))?'block':'none';
     });
 }
-
-// السلة
-let cart = [];
-
-function addToCart(name) {
-    cart.push(name);
-    document.getElementById("count").innerText = cart.length;
-
-    let li = document.createElement("li");
-    li.innerText = name;
-    document.getElementById("cartItems").appendChild(li);
+showCategory('all');
+let cart=[],total=0;
+function addToCart(n,p){cart.push({n,p});total+=p;update();}
+function removeItem(i){total-=cart[i].p;cart.splice(i,1);update();}
+function update(){
+let list=document.getElementById("cart-items");
+list.innerHTML="";
+cart.forEach((x,i)=>{
+list.innerHTML+=`<li>${x.n} - ${x.p} جنيه <button onclick="removeItem(${i})">❌</button></li>`;
+});
+document.getElementById("total").innerText=total;
 }
+document.querySelectorAll('.product').forEach(function(p){
 
-function toggleCart() {
-    let cartBox = document.getElementById("cartList");
-    cartBox.style.display = cartBox.style.display === "none" ? "block" : "none";
-}
+    // ❌ لو فيه زرار اطلب الآن بالفعل، متضيفش واحد تاني
+    if(p.querySelector('.btn-order')) return;
+
+    let name = p.querySelector('h3').innerText;
+
+    let phone = "201080722682";
+    if (p.classList.contains('perfume')) {
+        phone = "201027056070";
+    }
+
+    let orderBtn = document.createElement("a");
+    orderBtn.className = "btn-order";
+    orderBtn.innerText = "اطلب الآن";
+    orderBtn.href = `https://wa.me/${phone}?text=عايز اطلب ${name}`;
+
+    let cartBtn = p.querySelector('.add-cart');
+    if(cartBtn){
+        p.insertBefore(orderBtn, cartBtn);
+    }
+});
 </script>
 
 </body>
