@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <title>Zekraa</title>
 
@@ -48,7 +50,19 @@ h1 {
     margin: 0;
     text-align: center;
 }
+.product {
+    width: 100%;
+}
 
+.product img {
+    height: 140px; /* تزبيط حجم الصورة */
+    object-fit: cover;
+}
+
+.add-cart, .btn-order {
+    font-size: 14px;
+    padding: 10px;
+}
 /* السلة */
 #cart {
     background: white;
@@ -58,9 +72,9 @@ h1 {
 }
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 30px;
+    grid-template-columns: repeat(3, 1fr); /* 3 منتجات دايمًا */
+    gap: 15px;
+    padding: 15px;
 }
 .product {
     background: white;
