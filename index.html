@@ -37,7 +37,29 @@ body {
     border-radius: 8px;
     cursor: pointer;
 }
+@media (max-width: 600px) {
 
+    .sidebar {
+        width: 140px; /* تكبير السايدبار */
+        padding-top: 20px;
+    }
+
+    .main {
+        margin-left: 140px;
+    }
+
+    .sidebar button {
+        width: 120px;
+        font-size: 16px; /* تكبير الخط */
+        padding: 12px;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .sidebar h2 {
+        font-size: 24px;
+    }
+}
 .main {
     margin-left: 200px;
     width: 100%;
