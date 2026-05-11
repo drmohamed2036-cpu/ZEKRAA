@@ -46,6 +46,38 @@ body {
         width: 140px; /* تكبير السايدبار */
         padding-top: 20px;
     }
+
+    .main {
+        margin-left: 140px;
+    }
+
+    .sidebar button {
+        width: 120px;
+        font-size: 16px; /* تكبير الخط */
+        padding: 12px;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .sidebar h2 {
+        font-size: 24px;
+    }
+}
+@media (max-width:768px){
+
+.sidebar{
+    width:140px;
+    padding-top:20px;
+}
+
+.sidebar button{
+    width:120px;
+    margin:15px auto;
+    padding:14px;
+    font-size:15px;
+    font-weight:bold;
+    display:block;
+}
 @media (max-width:768px){
 
 .sidebar{
@@ -66,22 +98,12 @@ body {
     margin-left:140px;
 }
 
+}s
+
+.main{
+    margin-left:140px;
 }
-    .main {
-        margin-left: 140px;
-    }
 
-    .sidebar button {
-        width: 120px;
-        font-size: 16px; /* تكبير الخط */
-        padding: 12px;
-        margin: 10px auto;
-        display: block;
-    }
-
-    .sidebar h2 {
-        font-size: 24px;
-    }
 }
 .main {
     margin-left: 200px;
@@ -174,6 +196,63 @@ h1 {
     cursor: pointer;
     font-weight: bold;
 }
+/* تحسين شكل الموبايل */
+@media (max-width: 768px){
+
+  .sidebar{
+    width: 90px;
+    padding: 10px 5px;
+  }
+
+  .sidebar button{
+    width: 80px;
+    font-size: 13px;
+    padding: 10px 5px;
+    margin: 10px auto;
+    border-radius: 12px;
+  }
+
+  .content{
+    margin-left: 95px;
+    padding: 10px;
+  }
+
+  .products{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+  }
+
+  .product{
+    width: 100%;
+    margin: 0;
+    border-radius: 15px;
+  }
+
+  .product img{
+    height: 140px;
+    object-fit: cover;
+  }
+
+  .product h3{
+    font-size: 15px;
+  }
+
+  .price{
+    font-size: 15px;
+  }
+
+  .btn,
+  .add-cart{
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  h1{
+    font-size: 24px;
+  }
+
+}
 </style>
 </head>
 
@@ -259,33 +338,77 @@ h1 {
 <button class="add-cart" onclick="addToCart('بوكيه تخرج اقتصادي',100)">أضف للسلة</button>
 </div>
 
-<!-- 🧴 عطور -->
+<!-- 🧴 العطور -->
+
 <div class="product perfume">
 <img src="https://azizonline.com/wp-content/uploads/2025/01/1737995797_2537.png">
+
 <h3>برفان سوفاج</h3>
-<p>عطر رجالي فخم</p>
+
+<p>عطر رجالي فخم 🔥</p>
+
 <p class="price">250 جنيه</p>
 
-<button class="add-cart" onclick="addToCart('سوفاج',250)">أضف للسلة</button>
+
+
+<button class="add-cart" onclick="addToCart('برفان سوفاج',250)">
+أضف للسلة
+</button>
 </div>
+
 
 <div class="product perfume">
 <img src="https://www.faces.eg/dw/image/v2/BJSM_PRD/on/demandware.static/-/Sites-faces-master-catalog/default/dw160fd05a/images/PM_CAROLINA_HERRERA_Bad_Boy_EDP_2.jpg">
+
 <h3>Bad Boy</h3>
+
 <p>عطر قوي وجذاب 🔥</p>
+
 <p class="price">300 جنيه</p>
 
-<button class="add-cart" onclick="addToCart('Bad Boy',300)">أضف للسلة</button>
+
+
+<button class="add-cart" onclick="addToCart('Bad Boy',300)">
+أضف للسلة
+</button>
 </div>
+
 
 <div class="product perfume">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9kCJhtnCKjoiR0BjuAQm7Gk4H0MV4LtrEBg&s">
+
 <h3>Crazy Love</h3>
+
 <p>عطر حريمي ناعم 🌸</p>
+
 <p class="price">300 جنيه</p>
 
-<button class="add-cart" onclick="addToCart('Crazy Love',300)">أضف للسلة</button>
+
+<button class="add-cart" onclick="addToCart('Crazy Love',300)">
+أضف للسلة
+</button>
 </div>
+
+
+<div class="product perfume">
+<img src="https://i.ibb.co/KpdNW2jk/Whats-App-Image-2026-05-06-at-5-51-30-PM.jpg">
+
+<h3>ابراق بلاس روز ❤️🌹</h3>
+
+<p>
+100ml ب 470 ❤️ <br>
+200ml ب 650 ❤️
+</p>
+
+<p class="price">يبدأ من 470 جنيه</p>
+
+
+<button class="add-cart" onclick="addToCart('ابراق بلاس روز',470)">
+أضف للسلة
+</button>
+</div>
+
+
 
 <!-- 🎁 توزيعات -->
 <div class="product distributions">
@@ -343,7 +466,64 @@ h1 {
 <p class="price">450 جنيه</p>
 <button class="add-cart" onclick="addToCart('توزيعات فخمة',450)">أضف للسلة</button>
 </div>
+<div class="product distributions">
 
+<img src="https://i.ibb.co/8D7tqbfP/Whats-App-Image-2026-05-09-at-1-00-08-AM-1.jpg">
+
+<h3>توزيعات ورد أنيقة 🌸</h3>
+
+<p>تصميم هادئ ولمسة فخامة مميزة ✨</p>
+
+<p class="price">300 جنيه</p>
+
+<button class="add-cart" onclick="addToCart('توزيعات ورد أنيقة',300)">
+أضف للسلة
+</button>
+
+</div>
+
+<div class="product distributions">
+
+<img src="https://i.ibb.co/m5B1N8HN/Whats-App-Image-2026-05-09-at-1-00-08-AM-2.jpg">
+
+<h3>توزيعات ورد فخمة 🌷</h3>
+
+<p>هدية راقية بتفاصيل أنيقة ولمسة مميزة ✨</p>
+
+<p class="price">350 جنيه</p>
+
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات ورد فخمة">
+اطلب الآن
+</a>
+
+<button class="add-cart"
+onclick="addToCart('توزيعات ورد فخمة',350)">
+أضف للسلة
+</button>
+
+</div>
+<div class="product distributions">
+
+<img src="https://i.ibb.co/6cn6w8Qw/Whats-App-Image-2026-05-09-at-1-00-08-AM-3.jpg">
+
+<h3>توزيعات مناسبات مميزة 🎀</h3>
+
+<p>تصميم شيك ولمسة فخامة تناسب كل المناسبات ✨</p>
+
+<p class="price">399 جنيه</p>
+
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات مناسبات مميزة">
+اطلب الآن
+</a>
+
+<button class="add-cart"
+onclick="addToCart('توزيعات مناسبات مميزة',399)">
+أضف للسلة
+</button>
+
+</div>
 <!-- 🪔 صواني شبكة -->
 
 <div class="product tray">
