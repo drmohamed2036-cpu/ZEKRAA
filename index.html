@@ -136,6 +136,8 @@ h1 {
     padding: 15px;
     margin: 10px;
     border-radius: 10px;
+
+
 }
 .container {
     display: grid;
@@ -251,6 +253,19 @@ h1 {
   h1{
     font-size: 24px;
   }
+.checkout-btn{
+background: blue;
+width:250px;
+height:55px;
+border:none;
+border-radius:12px;
+background:#25D366;
+color:white;
+font-size:30px;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+
 
 }
 </style>
@@ -277,13 +292,16 @@ h1 {
 <ul id="cart-items"></ul>
 <p><strong>الإجمالي: <span id="total">0</span> جنيه</strong></p>
 </div>
+<button class="checkout-btn" onclick="sendOrder()">
+إتمام الطلب ✅
+</button>
 
 <div class="container">
 
 <!-- 🌸 بوكيهات الورد -->
 
 <div class="product flowers">
-<img src="https://i.ytimg.com/vi/F2vRKNdP_O0/hqdefault.jpg">
+<img src="https://api.cezma.cloud/storage/thumbnails/products/web/17569844981000012909.jpg">
 <h3>وردة واحدة</h3>
 <p class="price">50 جنيه</p>
 <button class="add-cart" onclick="addToCart('وردة واحدة',50)">أضف للسلة</button>
@@ -408,8 +426,40 @@ h1 {
 </button>
 </div>
 
+<div class="product perfume">
+<img src="https://i.ibb.co/RT759fRg/Whats-App-Image-2026-05-06-at-5-52-09-PM.jpg">
 
+<h3>Valentino Pink Diamond 💎</h3>
 
+<p>عطر فاخر وثابت برائحة جذابة وأنيقة ✨</p>
+
+<p class="price">690 جنيه</p>
+
+<button class="add-cart" onclick="addToCart('Valentino Pink Diamond',690)">أضف للسلة</button>
+</div>
+<div class="product perfume">
+<img src="https://i.ibb.co/XrNmzFSq/Whats-App-Image-2026-05-06-at-5-50-55-PM.jpg"
+
+<h3>Balas Rose 🌹</h3>
+
+<p>عطر روز فاخر برائحة ناعمة وثابتة 💖</p>
+
+<p class="price">600 جنيه</p>
+
+<button class="add-cart" onclick="addToCart('Balas Rose',600)">أضف للسلة</button>
+</div>
+
+<div class="product perfume">
+<img src="https://i.ibb.co/SXnLDTGy/Whats-App-Image-2026-05-06-at-5-50-07-PM.jpg">
+
+<h3>KAYALI Musk 12 ✨</h3>
+
+<p>عطر مسك أنيق برائحة هادئة وثابتة 💖</p>
+
+<p class="price">560 جنيه</p>
+
+<button class="add-cart" onclick="addToCart('KAYALI Musk 12',560)">أضف للسلة</button>
+</div>
 <!-- 🎁 توزيعات -->
 <div class="product distributions">
 <img src="https://i.ibb.co/Mx5Vc4rk/Whats-App-Image-2026-05-04-at-9-44-32-PM.jpg">
@@ -466,6 +516,7 @@ h1 {
 <p class="price">450 جنيه</p>
 <button class="add-cart" onclick="addToCart('توزيعات فخمة',450)">أضف للسلة</button>
 </div>
+
 <div class="product distributions">
 
 <img src="https://i.ibb.co/8D7tqbfP/Whats-App-Image-2026-05-09-at-1-00-08-AM-1.jpg">
@@ -524,6 +575,24 @@ onclick="addToCart('توزيعات مناسبات مميزة',399)">
 </button>
 
 </div>
+
+<div class="product distributions">
+<img src="https://i.ibb.co/PvCzg3Rk/Whats-App-Image-2026-05-09-at-1-00-08-AM.jpg">
+<h3>توزيعات فراشة كيوت 🦋</h3>
+<p>توزيعات شيك مع دبدوب وشوكولاتة ✨</p>
+<p class="price">300 جنيه</p>
+
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات مناسبات مميزة">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('توزيعات مناسبات مميزة',399)">
+أضف للسلة
+</button>
+</div>
+
+
 <!-- 🪔 صواني شبكة -->
 
 <div class="product tray">
@@ -531,6 +600,10 @@ onclick="addToCart('توزيعات مناسبات مميزة',399)">
 <h3>صينية شبكة فخمة</h3>
 <p>تصميم راقي ومميز 👑</p>
 <p class="price">400 جنيه</p>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات مناسبات مميزة">
+اطلب الآن
+</a>
 <button class="add-cart" onclick="addToCart('صينية شبكة فخمة',400)">أضف للسلة</button>
 </div>
 
@@ -539,6 +612,10 @@ onclick="addToCart('توزيعات مناسبات مميزة',399)">
 <h3>صينية شبكة راقية</h3>
 <p>لمسة أناقة وجمال ✨</p>
 <p class="price">450 جنيه</p>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات مناسبات مميزة">
+اطلب الآن
+</a>
 <button class="add-cart" onclick="addToCart('صينية شبكة راقية',450)">أضف للسلة</button>
 </div>
 
@@ -547,6 +624,10 @@ onclick="addToCart('توزيعات مناسبات مميزة',399)">
 <h3>صينية شبكة مميزة</h3>
 <p>تصميم جذاب 👌</p>
 <p class="price">300 جنيه</p>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات مناسبات مميزة">
+اطلب الآن
+</a>
 <button class="add-cart" onclick="addToCart('صينية شبكة مميزة',300)">أضف للسلة</button>
 </div>
 
@@ -555,6 +636,10 @@ onclick="addToCart('توزيعات مناسبات مميزة',399)">
 <h3>صينية شبكة بسيطة</h3>
 <p>شكل ناعم وجميل 🤍</p>
 <p class="price">200 جنيه</p>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات مناسبات مميزة">
+اطلب الآن
+</a>
 <button class="add-cart" onclick="addToCart('صينية شبكة بسيطة',200)">أضف للسلة</button>
 </div>
 
@@ -563,6 +648,10 @@ onclick="addToCart('توزيعات مناسبات مميزة',399)">
 <h3>صينية شبكة أنيقة</h3>
 <p>فخامة في التفاصيل 💎</p>
 <p class="price">350 جنيه</p>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات مناسبات مميزة">
+اطلب الآن
+</a>
 <button class="add-cart" onclick="addToCart('صينية شبكة أنيقة',350)">أضف للسلة</button>
 </div>
 
@@ -608,7 +697,26 @@ document.querySelectorAll('.product').forEach(function(p){
         p.insertBefore(orderBtn, cartBtn);
     }
 });
-</script>
 
+
+</script>
+<script>
+function sendOrder(){
+
+let message = "السلام عليكم، عايز أطلب:%0A%0A";
+
+cart.forEach(item=>{
+message += "- " + item.n + " - " + item.p + " جنيه%0A";
+});
+
+message += "%0Aالإجمالي: " + total + " جنيه";
+
+window.open(
+"https://wa.me/201027056070?text=" + message,
+"_blank"
+);
+
+}
+</script>
 </body>
 </html>
