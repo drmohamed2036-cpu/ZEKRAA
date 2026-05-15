@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -265,6 +264,44 @@ font-size:30px;
 font-weight:bold;
 cursor:pointer;
 margin-top:20px;
+}
+@media(max-width:768px){
+
+.products{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:10px;
+}
+
+.product{
+width:100%;
+height:auto;
+padding:12px;
+border-radius:20px;
+}
+
+.product img{
+width:100%;
+height:170px;
+object-fit:cover;
+border-radius:15px;
+}
+
+.product h3{
+font-size:20px;
+}
+
+.price{
+font-size:22px;
+}
+
+.add-cart,
+.btn-order{
+width:100%;
+font-size:18px;
+padding:12px;
+}
 
 
 }
@@ -434,9 +471,16 @@ margin-top:20px;
 <p>عطر فاخر وثابت برائحة جذابة وأنيقة ✨</p>
 
 <p class="price">690 جنيه</p>
-
-<button class="add-cart" onclick="addToCart('Valentino Pink Diamond',690)">أضف للسلة</button>
+<a class="btn"
+href="https://wa.me/201027056070?text=عايز اطلب valentino pink diamond">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('valentino pink diomond',690)">
+أضف للسلة
+</button>
 </div>
+
 <div class="product perfume">
 <img src="https://i.ibb.co/XrNmzFSq/Whats-App-Image-2026-05-06-at-5-50-55-PM.jpg"
 
@@ -445,8 +489,14 @@ margin-top:20px;
 <p>عطر روز فاخر برائحة ناعمة وثابتة 💖</p>
 
 <p class="price">600 جنيه</p>
-
-<button class="add-cart" onclick="addToCart('Balas Rose',600)">أضف للسلة</button>
+<a class="btn"
+href="https://wa.me/201027056070?text=عايز اطلب blas rose">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('bals rose',600)">
+أضف للسلة
+</button>
 </div>
 
 <div class="product perfume">
@@ -458,65 +508,128 @@ margin-top:20px;
 
 <p class="price">560 جنيه</p>
 
-<button class="add-cart" onclick="addToCart('KAYALI Musk 12',560)">أضف للسلة</button>
+<a class="btn"
+href="https://wa.me/201027056070?text=عايز اطلب kayalt musk 12">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('kayalt musk 12',560)">
+أضف للسلة
+</button>
 </div>
 <!-- 🎁 توزيعات -->
 <div class="product distributions">
 <img src="https://i.ibb.co/Mx5Vc4rk/Whats-App-Image-2026-05-04-at-9-44-32-PM.jpg">
 <h3>توزيعات هدايا فاخرة</h3>
 <p class="price">450 جنيه</p>
-<button class="add-cart" onclick="addToCart('توزيعات فاخرة',450)">أضف للسلة</button>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات هدايا فاخرة">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('توزيعات هدايا فاخرة ',450)">
+أضف للسلة
+</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/dwVpDx3r/Whats-App-Image-2026-05-04-at-9-44-49-PM.jpg">
 <h3>توزيعات أنيقة</h3>
 <p class="price">400 جنيه</p>
-<button class="add-cart" onclick="addToCart('توزيعات أنيقة',400)">أضف للسلة</button>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات انيقة">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('توزيعات انيقة',400)">
+أضف للسلة
+</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/ZRyvLjcH/Whats-App-Image-2026-05-04-at-9-44-50-PM-1.jpg">
 <h3>توزيعات راقية</h3>
 <p class="price">400 جنيه</p>
-<button class="add-cart" onclick="addToCart('توزيعات راقية',400)">أضف للسلة</button>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات راقية">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('توزيعات راقية',400)">
+أضف للسلة
+</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/dwQcdzVP/Whats-App-Image-2026-05-04-at-9-44-37-PM.jpg">
 <h3>توزيعات مميزة</h3>
 <p class="price">300 جنيه</p>
-<button class="add-cart" onclick="addToCart('توزيعات مميزة',300)">أضف للسلة</button>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات مميزة">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('توزيعات مميزة',300)">
+أضف للسلة
+</button>
 </div>
+
 
 <div class="product distributions">
 <img src="https://i.ibb.co/GvDsh5kk/Whats-App-Image-2026-05-04-at-9-44-44-PM.jpg">
 <h3>توزيعات أنيقة</h3>
 <p class="price">350 جنيه</p>
-<button class="add-cart" onclick="addToCart('توزيعات 350',350)">أضف للسلة</button>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات مناسبات مميزة">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('توزيعات مناسبات مميزة',350)">
+أضف للسلة
+</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/qM7Wwd4z/Whats-App-Image-2026-05-04-at-9-44-45-PM-1.jpg">
 <h3>توزيعات بسيطة</h3>
 <p class="price">250 جنيه</p>
-<button class="add-cart" onclick="addToCart('توزيعات بسيطة',250)">أضف للسلة</button>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات بسيطة">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('توزيعات بسيطة',250)">
+أضف للسلة
+</button>
 </div>
 
 <div class="product distributions">
 <img src="https://i.ibb.co/yFYGPFYf/Whats-App-Image-2026-05-04-at-9-44-46-PM-1.jpg">
-<h3>توزيعات مميزة</h3>
+<h3>توزيعات مميزة جدا</h3>
 <p class="price">250 جنيه</p>
-<button class="add-cart" onclick="addToCart('توزيعات مميزة2',250)">أضف للسلة</button>
-</div>
 
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات مميزة جدا">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('توزيعاتمميزة جدا',250)">
+أضف للسلة
+</button>
+</div>
 <div class="product distributions">
 <img src="https://i.ibb.co/rGSvX67K/Whats-App-Image-2026-05-04-at-9-44-46-PM.jpg">
 <h3>توزيعات فخمة</h3>
 <p class="price">450 جنيه</p>
-<button class="add-cart" onclick="addToCart('توزيعات فخمة',450)">أضف للسلة</button>
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب فخمة ">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('توزيعات فخمة',450)">
+أضف للسلة
+</button>
 </div>
-
 <div class="product distributions">
 
 <img src="https://i.ibb.co/8D7tqbfP/Whats-App-Image-2026-05-09-at-1-00-08-AM-1.jpg">
@@ -527,10 +640,14 @@ margin-top:20px;
 
 <p class="price">300 جنيه</p>
 
-<button class="add-cart" onclick="addToCart('توزيعات ورد أنيقة',300)">
+<a class="btn"
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات ورد انيقة">
+اطلب الآن
+</a>
+<button class="add-cart"
+onclick="addToCart('توزيعات ورد انيقة',300)">
 أضف للسلة
 </button>
-
 </div>
 
 <div class="product distributions">
@@ -552,8 +669,8 @@ href="https://wa.me/201080722682?text=عايز اطلب توزيعات ورد ف
 onclick="addToCart('توزيعات ورد فخمة',350)">
 أضف للسلة
 </button>
-
 </div>
+
 <div class="product distributions">
 
 <img src="https://i.ibb.co/6cn6w8Qw/Whats-App-Image-2026-05-09-at-1-00-08-AM-3.jpg">
@@ -583,14 +700,15 @@ onclick="addToCart('توزيعات مناسبات مميزة',399)">
 <p class="price">300 جنيه</p>
 
 <a class="btn"
-href="https://wa.me/201080722682?text=عايز اطلب توزيعات مناسبات مميزة">
+href="https://wa.me/201080722682?text=عايز اطلب توزيعات فرشة كيوت ">
 اطلب الآن
 </a>
 <button class="add-cart"
-onclick="addToCart('توزيعات مناسبات مميزة',399)">
+onclick="addToCart('توزيعات فرشة كيوت',300)">
 أضف للسلة
 </button>
 </div>
+
 
 
 <!-- 🪔 صواني شبكة -->
